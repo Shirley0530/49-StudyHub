@@ -16,7 +16,7 @@ Python 3.10+、Flask、SQLite、HTML、CSS、JavaScript。
 ## 本地运行
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/<你的GitHub用户名>/<仓库名>.git
+git clone https://github.com/Shirley0530/49-StudyHub.git
 cd <仓库名>
 
 # 2. 创建并激活虚拟环境（Windows）
