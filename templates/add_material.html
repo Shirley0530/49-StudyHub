@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}<h1>添加学习资料</h1><form class="form-card" method="post" enctype="multipart/form-data">
+<label>资料名称 *<input name="title" required maxlength="120" placeholder="例如：数据结构期末复习课件"></label>
+<label>所属课程<input name="course" placeholder="例如：数据结构"></label><label>分类<input name="category" placeholder="例如：课件 / 笔记 / 实验报告"></label>
+<label>资料描述<textarea name="description" rows="4" placeholder="简单介绍资料内容"></textarea></label>
+<label>上传文件（最大 20 MB）<input type="file" name="file"></label><div><button class="btn">保存资料</button> <a href="{{ url_for('materials.list_materials') }}">取消</a></div></form>{% endblock %}

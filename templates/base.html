@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}StudyHub 学习资料管理系统{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="{{ url_for('index') }}">StudyHub</a>
+<nav><a href="{{ url_for('index') }}">首页</a><a href="{{ url_for('materials.list_materials') }}">资料库</a><a href="{{ url_for('materials.add_material') }}">添加资料</a></nav></header>
+<main class="container">
+{% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}
+  {% for category, message in messages %}<div class="notice {{ category }}">{{ message }}</div>{% endfor %}
+{% endif %}{% endwith %}
+{% block content %}{% endblock %}
+</main>
+<footer>StudyHub · 让学习资料更有序</footer>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body></html>

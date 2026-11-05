@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}<h1>编辑学习资料</h1><form class="form-card" method="post">
+<label>资料名称 *<input name="title" required maxlength="120" value="{{ material.title }}"></label>
+<label>所属课程<input name="course" value="{{ material.course }}"></label><label>分类<input name="category" value="{{ material.category }}"></label>
+<label>资料描述<textarea name="description" rows="4">{{ material.description }}</textarea></label>
+<p class="muted">当前附件：{{ material.filename or '无附件' }}（本版本编辑资料信息，不替换附件）</p><div><button class="btn">保存修改</button> <a href="{{ url_for('materials.list_materials') }}">取消</a></div></form>{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><div><p class="eyebrow">YOUR PERSONAL STUDY LIBRARY</p><h1>把学习资料，<br>整理得井井有条。</h1><p>集中管理课件、笔记、实验报告与电子书。</p><a class="btn" href="{{ url_for('materials.add_material') }}">＋ 添加第一份资料</a></div><div class="hero-art">📚</div></section>
+<section class="stats"><div class="stat"><span>资料总数</span><strong>{{ total }}</strong></div><div class="stat"><span>资料分类</span><strong>{{ categories }}</strong></div><div class="stat"><span>管理方式</span><strong>本地数据库</strong></div></section>
+<div class="section-head"><h2>最近添加</h2><a href="{{ url_for('materials.list_materials') }}">查看全部 →</a></div>
+{% if recent %}<div class="material-grid">{% for item in recent %}<article class="material-card"><span class="file-icon">📄</span><h3>{{ item.title }}</h3><p>{{ item.course or '未填写课程' }} · {{ item.category or '未分类' }}</p></article>{% endfor %}</div>{% else %}<div class="empty">还没有资料，添加一份课件或笔记开始使用吧。</div>{% endif %}
+{% endblock %}
